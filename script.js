@@ -1,3 +1,6 @@
+// script.js
+
+// Wait until the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function () {
     // Select the input, button, and task list from the DOM
     const addButton = document.getElementById('add-task-btn');
@@ -22,17 +25,17 @@ document.addEventListener('DOMContentLoaded', function () {
         // Create the remove button
         const removeButton = document.createElement('button');
         removeButton.textContent = 'Remove';
-        removeButton.className = 'remove-btn';
+        removeButton.classList.add('remove-btn'); // use classList.add instead of className
 
         // Add click event to remove the task
         removeButton.onclick = function () {
             taskList.removeChild(listItem);
         };
 
-        // Add the button to the list item
+        // Append the remove button to the list item
         listItem.appendChild(removeButton);
 
-        // Add the list item to the task list
+        // Append the list item to the task list
         taskList.appendChild(listItem);
 
         // Clear the input field
